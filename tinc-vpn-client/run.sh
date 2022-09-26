@@ -73,9 +73,4 @@ EOF
 
 init_tun
 generate_config_files
-cd /etc/tinc/tinc0/
-ls -la
-generate_private_key
-cd /etc/tinc/tinc0/
-ls -la
 tincd -n tinc0 -D -d
