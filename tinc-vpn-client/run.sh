@@ -64,7 +64,8 @@ EOF
     echo ${PUBLICKEY} | base64 -d >> /etc/tinc/tinc0/hosts/${CLIENTNAME}
     echo ${SERVERPUBLICKEY} | base64 -d >> /etc/tinc/tinc0/hosts/${SERVERNAME}
     echo ${PRIVATEKEY} | base64 -d > /etc/tinc/tinc0/rsa_key.priv
-
+    
+    
     chmod +x /etc/tinc/tinc0/tinc-up
     chmod +x /etc/tinc/tinc0/tinc-down
 }
@@ -74,4 +75,6 @@ generate_config_files
 cd /etc/tinc/tinc0/
 ls -la
 generate_private_key
+cd /etc/tinc/tinc0/
+ls -la
 tincd -n tinc0 -D -d
