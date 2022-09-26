@@ -65,9 +65,10 @@ EOF
     echo ${SERVERPUBLICKEY} | base64 -d >> /etc/tinc/tinc0/hosts/${SERVERNAME}
     echo ${PRIVATEKEY} | base64 -d > /etc/tinc/tinc0/rsa_key.priv
     
-    
+    chmod 666 /etc/tinc/tinc0/rsa_key.priv
     chmod +x /etc/tinc/tinc0/tinc-up
     chmod +x /etc/tinc/tinc0/tinc-down
+    echo "Private key created"
 }
 
 init_tun
